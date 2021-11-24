@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Nov 23 14:42:32 2021
-
-@author: user
+@author: Pin-Han, Huang
 """
 import numpy as np
 import itertools
