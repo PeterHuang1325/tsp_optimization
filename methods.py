@@ -171,8 +171,7 @@ def tabu_search_dist(table, iteration):
         move = [] #initial move
         count_cond = 0
         
-        for n in range(len(domain)):
-            
+        for n in range(len(domain)):            
             new_dist = calc_dist(table, new_path)
             test_dist = calc_dist(table, domain[n])
             
