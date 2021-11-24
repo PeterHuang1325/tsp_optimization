@@ -346,7 +346,6 @@ def selection(table, pool):
             np.random.seed(seed+ 100*rnd)
             rand_num = np.random.rand()
             if (rand_num <  pb[1]) and (len(mate_pool) < mate_size):
-                #print(pb[0].copy())
                 mate_pool.append(pb[0].copy())                     
         rnd += 1        
     return mate_pool
