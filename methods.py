@@ -407,7 +407,6 @@ def mutate(cross):
 # In[10]:
 # Genetic Algorithm
 def GA(table, iteration):
-
     size = 10
     seed = 100
     pool = init_pop(seed, table, size) #list: shape(10, 37)
@@ -459,8 +458,7 @@ def GA(table, iteration):
 # In[11]:
 #ant-colony
 class AntColony:
-    def __init__(self, pop_size, evaporate_rate, pheromone_factor, table, calc_dist):
-        
+    def __init__(self, pop_size, evaporate_rate, pheromone_factor, table, calc_dist):       
         self.num_ants = pop_size
         self.table = table
         self.stores = np.arange(0,len(table)).tolist() 
@@ -473,10 +471,7 @@ class AntColony:
     def pheromone_init(self):
         return -np.eye(self.num_stores) + 1 #construct matrix with ones except the diagonal to be zero
     
-    def roulette_wheel(self, phero_list):
-        
-        #phero_sorted = sorted(phero_list)
-        
+    def roulette_wheel(self, phero_list):        
         phero_density = [phero / np.sum(phero_list) for phero in phero_list]
         phero_cum_prob = np.cumsum(phero_density)
         #print(phero_cum_prob)
@@ -625,7 +620,6 @@ def tabu_search_second(table, init_path, iteration):
 # In[14]:
 #hybrid algorithm (PSO-TS)
 def Hybrid_PSO_TS(table, PSO, TS, first, second):
-    
     PSO_first = PSO(table, first) #particles: 20
     hybrid = TS(table, PSO_first[1], second) #pos_glob of PSO
     hybrid_best = PSO_first[0] + hybrid[0] #concat dist results []+[] = [...]
