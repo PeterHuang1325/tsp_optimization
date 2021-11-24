@@ -100,8 +100,7 @@ def get_temp(t, T):
     epsilon = 1e-10
     return np.where(t > 120, np.divide(T, np.log(t + epsilon)), T)
 
-def init_temp(table, seed):
-    
+def init_temp(table, seed):    
     temp_list = []
     for i in range(4):
         np.random.seed(seed + 10*i)
