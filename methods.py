@@ -257,9 +257,9 @@ def set_v(v, v_range):
     elif v > v_range[1]:
         v = v_range[1]
     else:
-        v = v
-        
+        v = v     
     return v 
+
 # In[8]:
 #PSO
 def PSO_dist(table, iteration):
@@ -322,8 +322,6 @@ def PSO_dist(table, iteration):
         if len(np.where(f_2 < f_1)[0]) > 0: #exclude the f_1.all() > f_2.all() case
             pos_loc[np.where(f_2 < f_1)[0][0]] = new_path_list[np.where(f_2 < f_1)[0][0]]
         path_list = new_path_list
-        
-
         t += 1
         
     return PSO_best, pos_glob
