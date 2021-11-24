@@ -276,8 +276,6 @@ def PSO_dist(table, iteration):
         
         new_path_list = []
         for idx, path in enumerate(path_list):
-            
-            #print(domain[idx])
             np.random.seed(seed + 100*idx)
             rand = np.random.choice(np.arange(0, len(domain[idx])-1), v[idx] , replace = False) #(0, 595)
             
@@ -367,11 +365,9 @@ def crossover(mate):
         cross_loc = mate[comb[c][0]][cross_pos_a]
         #delete the store in a 
         mate_del_a = np.delete(mate[comb[c][0]], cross_pos_a)
-        #print(mate[comb[c][0]].shape)
-        #find the corresponding position of store index in b
         
+        #find the corresponding position of store index in b        
         cross_pos_b = np.where(mate[comb[c][1]] == cross_loc)[0][0]
-        #print(cross_pos_b)
         #delete the store in b
         mate_del_b = np.delete(mate[comb[c][1]], cross_pos_b)
         
