@@ -16,7 +16,7 @@ from methods import (hill_climbing_dist, random_walk_dist, simu_anneal_dist,
 #main_function 
 def run_expr(method_list, iteration, PSO_iter, GA_iter, ant_iter, first_stg, second_stg):
     path = './'   
-    data = pd.read_csv(path+'name.csv', header = 0, index_col=0)
+    data = pd.read_csv(path+'filename.csv', header = 0, index_col=0)
     distance = data.T
     
     #get dataframe values as matrix and save it for plot
