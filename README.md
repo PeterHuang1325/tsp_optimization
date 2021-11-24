@@ -11,7 +11,7 @@ These methods includes:
 7. Ant Colony System
 8. Hybrid Algorithm(PSO+TS)
 
-#Hints
+# Hints
 *All methods can be referenced in the 'methods.py' file.  
 *Example dataset 'Distance.csv'  records the distance of 7-11 stores in Nangang, Taipei.  
 *Run 'main_tsp.py' for experiment results.  
