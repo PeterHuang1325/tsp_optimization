@@ -259,7 +259,7 @@ def PSO_dist(table, iteration):
     
     path_list = init_pop(seed, table, num_particles)           
     t = 0
-    v = [30]*len(path_list) #[20,20, ...,20], length = 20
+    v = [30]*len(path_list) #[30,30, ...,30], length = 20
     v_range = np.array([10,50])
     
     pos_loc = path_list #shape(20,) #pos_loc: local best position; x: current position
