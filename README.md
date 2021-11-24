@@ -1,5 +1,5 @@
 # tsp_optimization
-This project contains several common optimization methods to cope with traveling salesman problem.
+This project aims to experiment with traveling salesman problem with several common optimization methods.
 
 These methods includes:
 1. hill climbing
