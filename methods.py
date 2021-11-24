@@ -13,8 +13,7 @@ def init_visit(table):
     
     #set index range to be permutated
     idx_range = np.concatenate((np.arange(0, init_num), np.arange(init_num + 1,36)))
-    rand_vis = np.random.choice(idx_range, len(table) - 1, replace = False)  
-        
+    rand_vis = np.random.choice(idx_range, len(table) - 1, replace = False)          
     return np.pad(rand_vis, (1,1), 'constant', constant_values= init_num)
    
 def calc_dist(table, path):
@@ -157,8 +156,7 @@ def tabu_search_dist(table, iteration):
     #create tabu_list and set tenure
     tabu_list = []
     tabu_tenure = 10
-    
-    
+       
     #create initial
     path = init_visit(table) #numpy array
     best_path = cur_path = path
@@ -196,8 +194,7 @@ def tabu_search_dist(table, iteration):
             tabu_list.append(move)
             
             if len(tabu_list) >= tabu_tenure:
-                tabu_list.remove(tabu_list[0]) #FIFO
-        
+                tabu_list.remove(tabu_list[0]) #FIFO     
         
         asp_dict = dict()
         #Aspiration criterion: expectation improvement
@@ -208,14 +205,12 @@ def tabu_search_dist(table, iteration):
             tab_path[tabu_list[tb][1]] = tab_copy
             tab_dist = calc_dist(table, tab_path)
             if tab_dist < min_dist:
-                asp_dict[tab_dist] = tab_path
-                            
+                asp_dict[tab_dist] = tab_path                          
                
         if len(asp_dict) > 0:        
             min_dist = np.min([k for k in asp_dict.keys()])
             cur_path = asp_dict[min_dist] #set new cur_path
-            best_path = cur_path #set optima best_path = cur_path
-            
+            best_path = cur_path #set optima best_path = cur_path            
         
         tb_best_dist.append(min_dist)
         i += 1
@@ -319,8 +314,7 @@ def PSO_dist(table, iteration):
         if len(np.where(f_2 < f_1)[0]) > 0: #exclude the f_1.all() > f_2.all() case
             pos_loc[np.where(f_2 < f_1)[0][0]] = new_path_list[np.where(f_2 < f_1)[0][0]]
         path_list = new_path_list
-        t += 1
-        
+        t += 1        
     return PSO_best, pos_glob
 
 
@@ -357,8 +351,7 @@ def selection(table, pool):
             if (rand_num <  pb[1]) and (len(mate_pool) < mate_size):
                 #print(pb[0].copy())
                 mate_pool.append(pb[0].copy())                     
-        rnd += 1
-        
+        rnd += 1        
     return mate_pool
 
 
@@ -400,8 +393,7 @@ def mutate(cross):
        np.random.seed(seed + 100*idx)
        mutate_idx = np.random.randint(0, len(domain))
        #mutate_pool.append(m.copy())
-       mutate_pool.append(domain[mutate_idx].copy())
-       
+       mutate_pool.append(domain[mutate_idx].copy())       
     return mutate_pool #shape(12,15)
  
 # In[10]:
@@ -431,9 +423,7 @@ def GA(table, iteration):
         for q in q_idx:
             qualify_pool.append(mutate_pool[q])
             qualified.append([mutate_pool[q]]+[calc_dist(table, mutate_pool[q])])
-            
-                
-        #print(qualified)
+                        
         # append max points in each iteration    
         min_points = qualified[0][1]
         best_path = qualified[0][0]
@@ -474,7 +464,6 @@ class AntColony:
     def roulette_wheel(self, phero_list):        
         phero_density = [phero / np.sum(phero_list) for phero in phero_list]
         phero_cum_prob = np.cumsum(phero_density)
-        #print(phero_cum_prob)
         rand = np.random.rand()
         for loc, prob in enumerate(phero_cum_prob):
             if rand < prob:
@@ -551,7 +540,6 @@ def tabu_search_second(table, init_path, iteration):
     tabu_list = []
     tabu_tenure = 10
     
-    
     #create initial
     path = init_path #numpy array
     best_path = cur_path = path
@@ -566,8 +554,7 @@ def tabu_search_second(table, init_path, iteration):
         move = [] #initial move
         count_cond = 0
         
-        for n in range(len(domain)):
-            
+        for n in range(len(domain)):            
             new_dist = calc_dist(table, new_path)
             test_dist = calc_dist(table, domain[n])
             
@@ -622,6 +609,5 @@ def tabu_search_second(table, init_path, iteration):
 def Hybrid_PSO_TS(table, PSO, TS, first, second):
     PSO_first = PSO(table, first) #particles: 20
     hybrid = TS(table, PSO_first[1], second) #pos_glob of PSO
-    hybrid_best = PSO_first[0] + hybrid[0] #concat dist results []+[] = [...]
-    
+    hybrid_best = PSO_first[0] + hybrid[0] #concat dist results []+[] = [...]   
     return hybrid_best, hybrid[1][-1] #dist and last path
