@@ -12,7 +12,7 @@ def init_visit(table):
     init_num = np.random.randint(0,len(table),1) #select initial index
     
     #set index range to be permutated
-    idx_range = np.concatenate((np.arange(0, init_num), np.arange(init_num + 1,36)))
+    idx_range = np.concatenate((np.arange(0, init_num), np.arange(init_num + 1,len(table)))
     rand_vis = np.random.choice(idx_range, len(table) - 1, replace = False)          
     return np.pad(rand_vis, (1,1), 'constant', constant_values= init_num)
    
