@@ -521,7 +521,6 @@ def run_ant_colony(table, iteration):
     glob_best = []
     phero_map = solver.pheromone_init()    
     for i in range(iteration):
-        #print(phero_map)
         min_dist, best_path = solver.multi_ant(phero_map)
         phero_map = solver.update_pheromone(phero_map)
         glob_best.append([best_path] + [min_dist])
