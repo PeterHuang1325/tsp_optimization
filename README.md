@@ -1,4 +1,4 @@
-# tsp_optimization
+# TSP_Optimization
 This project implements traveling salesman problem with several common optimization methods.
 
 These methods includes:
