@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Nov  7 08:53:52 2021
-
 @author:  Pin-Han, Huang
 """
 # In[0]:
