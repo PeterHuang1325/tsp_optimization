@@ -22,7 +22,7 @@ def run_expr(method_list, iteration, PSO_iter, GA_iter, ant_iter, first_stg, sec
     #get dataframe values as matrix and save it for plot
     distance_matrix = distance.values
     #set the stored path
-    stored_path = 'C:/Users/user/Desktop/NTU/碩一上/DS_Computing/Optimization/Final/expr_results' 
+    stored_path = '..stored_path_here...' 
     np.save(os.path.join(stored_path, 'dist_matrix.npy'), distance_matrix)  
     
     #create dataframe for distance abd save it for plot
