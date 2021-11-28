@@ -2,10 +2,10 @@
 This project implements traveling salesman problem with several common optimization methods.
 
 These methods includes:
-1. hill climbing
-2. random walk
-3. simulated annealing
-4. tabu search
+1. Hill Climbing
+2. Random Walk
+3. Simulated Annealing
+4. Tabu Search
 5. Particle Swarm Optimization(PSO)
 6. Genetic Algorithm(GA)
 7. Ant Colony System
