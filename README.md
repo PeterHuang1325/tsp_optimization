@@ -18,6 +18,6 @@ These methods includes:
 *Plot the results with 'plot_result.ipynb' file.
 
 # Results
-1. Figure 1 denotes the distance result across iterations for all methods. <img src=/images/compare.png width=80% height=80%>
-2. Figure 2 denotes the pin point of 7-11 stores on Google map for `PSO+TS` method. <img src=/images/pso_tb.png width=80% height=80%>
+1. Figure 1 denotes the distance result across iterations for all methods. <img src=/images/compare.png width=60% height=60%>
+2. Figure 2 denotes the pin point of 7-11 stores on Google map for `PSO+TS` method. <img src=/images/pso-tb.png width=75% height=75%>
 
