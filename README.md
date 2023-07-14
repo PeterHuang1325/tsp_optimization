@@ -1,4 +1,4 @@
-# TSP_Optimization
+# TSP optimization on 7-11 stores in Taiwan
 This project implements traveling salesman problem on 7-11 stores in Nangang, Taipei with famous **heuristic optimization** methods.
 
 These methods includes:
@@ -12,10 +12,10 @@ These methods includes:
 8. Hybrid Algorithm(PSO+TS)
 
 # Hints
-*All methods can be referenced in the 'methods.py' file.  
-*Example dataset 'Distance.csv'  records the distance of 7-11 stores in Nangang, Taipei.  
-*Run 'main_tsp.py' for experiment results.  
-*Plot the results with 'plot_result.ipynb' file.
+*All methods can be referenced in the `methods.py` file.  
+*Example dataset `Distance.csv`  records the distance of 7-11 stores in Nangang, Taipei.  
+*Run `main_tsp.py` for experiment results.  
+*Plot the results with `plot_result.ipynb` file.
 
 # Results
 1. Figure 1 denotes the distance result across iterations for all methods. <img src=/images/compare.png width=60% height=60%>
